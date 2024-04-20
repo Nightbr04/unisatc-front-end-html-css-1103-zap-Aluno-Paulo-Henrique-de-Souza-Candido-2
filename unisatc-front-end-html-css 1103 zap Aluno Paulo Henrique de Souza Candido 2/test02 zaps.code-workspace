@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../test01"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "unisatc-front-end-html-css 1103 zap"
+	}
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho zaps online</title>
+    <link rel="stylesheet" href="zap.css" />
+</head>
+<body>
+    <div id="page">
+        <header class="container">
+            <h1>Atendimento On-line</h1>    
+        </header>
+        <div class="messages-list" id="messagesList">
+            <div class="message-item">
+                <div class="msg-user"><strong>Atendente diz:</strong></div>
+                <div class="msg-chat">Olá Sr.baks</div>
+            </div>
+            <div class="message-item">
+                <div class="msg-user"><strong>Atendente diz:</strong></div>
+                <div class="msg-chat">Bla bla bla bla?</div>
+            </div>
+            <div class="message-item message-user">
+                <div class="msg-user"><strong>Você diz:</strong></div>
+                <div class="msg-chat">Blaaaa Bla</div>
+            </div>
+            <div class="message-item message-user">
+                <div class="msg-user"><strong>Você diz:</strong></div>
+                <div class="msg-chat">Bla bla Boi</div>
+            </div>
+            <div class="message-item">
+                <div class="msg-user"><strong>Atendente diz:</strong></div>
+                <div class="msg-chat">KKKKKKKKKKK blaboi?</div>
+            </div>
+            <div class="message-item">
+                <div class="msg-user"><strong>Atendente diz:</strong></div>
+                <div class="msg-chat">Bla Blabomb </div>
+            </div>
+        </div>
+        <form id="form-chat-send">
+            <input type="text" id="messageInput" name="message">
+            <button type="button" onclick="sendMessage()">ENVIAR</button>
+        </form>
+    </div>
+    <script>
+        function sendMessage() {
+            var messageInput = document.getElementById("messageInput");
+            var message = messageInput.value.trim();
+            
+            if (message !== "") {
+                var messagesList = document.getElementById("messagesList");
+                var messageItem = document.createElement("div");
+                messageItem.classList.add("message-item", "message-user");
+                
+                var msgUser = document.createElement("div");
+                msgUser.classList.add("msg-user");
+                msgUser.innerHTML = "<strong>Você diz:</strong>";
+                
+                var msgChat = document.createElement("div");
+                msgChat.classList.add("msg-chat");
+                msgChat.textContent = message;
+                
+                messageItem.appendChild(msgUser);
+                messageItem.appendChild(msgChat);
+                
+                messagesList.appendChild(messageItem);
+                
+                // Limpar o campo de entrada após o envio da mensagem
+                messageInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
